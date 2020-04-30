@@ -24,7 +24,7 @@ void pianifica(double M, int n, double *d, double *p, int i, double dist, piano 
 	      //printf("Trovato best (%f)",b->costo);
 	      for(int i=0;i<n;i++){
 		     b->stazione[i] = c.stazione[i];
-			 //printf("\n%d",b->stazione[i]);
+			
 	      }
 		}
 	    return;
@@ -34,19 +34,18 @@ void pianifica(double M, int n, double *d, double *p, int i, double dist, piano 
 	PercorsoDaUltimoRifornimento+=d[i];
 
 
-	// non è possibile arrivare a questa stazione di servizio
-	//600km e' la distanza percorribile con un pieno
+	
 	if (PercorsoDaUltimoRifornimento > 600)
 			return;
 
 		c.stazione[i]=0;
-        //printf("\nSalto Rifornimento in stazione %d, (percorsi %f km)", i, dist);
+       
 		pianifica(M,n,d,p,i+1,dist,c,b,PercorsoDaUltimoRifornimento);
 
-		c.costo += PercorsoDaUltimoRifornimento * 0.05 * p[i]; // aggiungo costo di rifornirmi in i
+		c.costo += PercorsoDaUltimoRifornimento * 0.05 * p[i]; 
         c.stazione[i]=1;
 		PercorsoDaUltimoRifornimento=0;
-		//printf("\nRifornimento in stazione %d, (percorsi %f km)", i, dist);
+		
 		pianifica(M,n,d,p,i+1,dist,c,b,PercorsoDaUltimoRifornimento);
 }
 
