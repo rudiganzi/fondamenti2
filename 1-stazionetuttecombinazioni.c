@@ -5,8 +5,8 @@
 #define DOUBLE_MAX 1000000
 
 typedef struct {
-  double costo;    // costo soluzioni
-  int stazione[N];  // lista fermate
+  double costo;     
+  int stazione[N];  
 } piano;
 
 
@@ -20,8 +20,8 @@ void pianifica(double M, int n, double *d, double *p, int i, double dist, piano 
 			 printf("%d ",c.stazione[i]);
 		//getchar();
 	    if(c.costo<b->costo) {
-	      b->costo=c.costo;  // copia piano attuale in b
-	      //printf("Trovato best (%f)",b->costo);
+	      b->costo=c.costo;  
+	     
 	      for(int i=0;i<n;i++){
 		     b->stazione[i] = c.stazione[i];
 			
