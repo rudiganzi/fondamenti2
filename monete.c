@@ -4,6 +4,10 @@
 
 int* Monete(int* t, int size, int b) {
 
+
+
+	if (b <= 0) { return NULL; }
+
 	int i = 0;
 
 	int spesa = 0;
