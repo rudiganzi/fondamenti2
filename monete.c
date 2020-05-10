@@ -19,7 +19,7 @@ int* Monete(int* t, int size, int b) {
 		out[l] = 0;
 	}
 
-	while ((b < spesa) || (i < size)) {
+	while ((spesa < b) || (i < size)) {
 
 		if (spesa + t[i] <= b) {
 
